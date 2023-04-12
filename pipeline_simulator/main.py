@@ -12,6 +12,25 @@ def leituraArquivo():
         aDados.append(linha)
     arquivo.close()
 
+# Class used to control the pipeline of the processor
+class pipeline:
+    def __init__(self) -> None:
+        pass
+
+    def fetch(self) -> None:
+        pass
+    
+    def decode(self) -> None:
+        pass
+
+    def execute(self) -> None:
+        pass
+
+    def memory(self) -> None:
+        pass
+
+    def writeBack(self) -> None:
+        pass
 
 print('Imprimindo linhas do arquivo \n') #executa leitura do arquivo de texto 
 

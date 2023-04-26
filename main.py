@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
+import array
 
 aDados=[] #array que ira guardar as linhas do arquivo de texto
+R = array.array('I', [0] * 32) # banco de registradores
 
 #Função que executa leitura do arquivo txt e guarda linhas no array
 def leituraArquivo():
@@ -12,6 +14,23 @@ def leituraArquivo():
         print(linha)
         aDados.append(linha)
     arquivo.close()
+
+def PrintRegistradores():
+    print("Banco de Registradores -------------------------------------------------------------")
+    for i in range(8):
+        print(f"|R{i} - {R[i]} ", end="")
+    print()
+    for i in range(8, 16):
+        print(f"|R{i} - {R[i]} ", end="")
+    print()
+    for i in range(16, 24):
+        print(f"|R{i} - {R[i]} ", end="")
+    print()
+    for i in range(24, 32):
+        print(f"|R{i} - {R[i]} ", end="")
+    print()
+    print("-----------------------------------------------------------------------------------")
+
 
 class Instruction:
     def __init__(self, line=None):
@@ -81,8 +100,7 @@ if __name__ == '__main__':
         pipeline.execute()
         pipeline.memory()
         pipeline.writeBack()
-
-
+        PrintRegistradores() # Imprime em tela o valor do banco de registradores
 
 
 

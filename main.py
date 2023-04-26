@@ -3,6 +3,7 @@ import array
 
 aDados=[] #array que ira guardar as linhas do arquivo de texto
 R = array.array('I', [0] * 32) # banco de registradores
+PC = 0 # Program Counter 
 
 #Função que executa leitura do arquivo txt e guarda linhas no array
 def leituraArquivo():
@@ -38,8 +39,10 @@ class Instruction:
         self.op1    = None
         self.op2    = None
         self.op3    = None
+        self.valorTemp1  = None
+        self.valorTemp2  = None
+        self.valorTemp3  = None
         self.status = True
-
         if line:
             self.processInstruction(line)
 
@@ -81,6 +84,9 @@ class Pipeline:
         pass
 
     def memory(self) -> None:
+        print("Etapa de Acesso Memória ------------------------------------------------------------ \n")
+        #instMem = instExec 
+        print("------------------------------------------------------------------------------------ \n\r");
         pass
 
     def writeBack(self) -> None:
